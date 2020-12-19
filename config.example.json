@@ -6,9 +6,7 @@
             "129863219696239848"
         ],
         "options": {
-            "title": "New Copied Message",
-            "richEmbed": false,
-            "richEmbedColor": 30975,
+            "title": "New Message",
             "includeSource": true
         }
     }
