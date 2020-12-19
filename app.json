@@ -1,0 +1,25 @@
+{
+    "name": "Tag Bot",
+    "description": "This bot tags a list of people or roles whenever there is a new message in any of the channels it can read", 
+    "keywords": [
+        "discord",
+        "bot",
+        "discord.js",
+        "typescript",
+        "javascript",
+        "mentions"
+      ], 
+      "repository": "https://github.com/ahmedwalid05/Tagbot/",
+      "env":{
+          "TAGBOT_CONFIG_JSON":{
+            "description": "The config file that the bot will use."
+          }
+      }, 
+      "buildpacks":[
+          {
+              "url":"heroku/nodejs"
+          }
+      ]
+
+
+}
