@@ -1,0 +1,35 @@
+{
+  "name": "tag-bot",
+  "version": "0.0.1",
+  "description": "A bot that tags specific people whenever a new message is posted ",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "node ./bin/echobot.js",
+    "debug": "nodemon ./src/echobot.ts",
+    "test": "tsc & npm start"
+  },
+  "dependencies": {
+    "discord.js": "^11.6.4",
+    "ip-regex": "^4.2.0",
+    "is-image-url": "^1.1.8",
+    "node-fetch": "^2.6.1",
+    "path-parser": "^6.1.0",
+    "tlds": "^1.216.0",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/node": "^13.13.4",
+    "@types/node-fetch": "^2.5.7",
+    "nexe": "^3.3.7",
+    "nodemon": "^2.0.3",
+    "pkg": "^4.4.9",
+    "ts-node": "^8.10.1",
+    "typescript": "^3.8.3"
+  },
+  "author": "",
+  "license": "ISC"
+}
