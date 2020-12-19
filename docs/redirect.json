@@ -4,11 +4,6 @@
     "description": "The properties of the destination channel and the tagged users ",
     "type": "object",
     "properties": {
-        "destination": {
-            "type": "string",
-            "title": "Destination",
-            "description": "The Id of the destination channel"
-        },
         "tags":{
             "type":"array",
             "title": "Tags",
@@ -44,7 +39,7 @@
         }
     },
     "required": [
-        "destination",
+        "tags",
         "options"
     ],
     "format": "categories"

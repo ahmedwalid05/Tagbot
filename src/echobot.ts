@@ -70,13 +70,9 @@ class EchoBot {
     // Register event for when client is ready.
     this.discordClient.on("ready", () => {
       logger["info"]("Signed into Discord.");
-
-      let channel = this.discordClient.channels.get(this.config.redirect.destination);
-      (<any>this.discordClient).destChannel = channel;
     });
-
     // Register event for when client receives a message.
-    this.discordClient.on("message", this.onDiscordClientMessageReceived);
+    this.discordClient.on("message", (message) => this.onDiscordClientMessageReceived(message));
 
     // Register event for when an error occurs.
     this.discordClient.on("error", (error) => {
@@ -94,13 +90,15 @@ class EchoBot {
   * Fired when a message is received on Discord in any channel.
   * @param message The message that was received.
   */
-  onDiscordClientMessageReceived(message: Message): void {
+  async onDiscordClientMessageReceived(message: Message): Promise<void> {
     // Find redirects that have this message's channel id as a source.
-    let channel: discord.Channel = (<any>this).destChannel;
 
-    if (message.channel.id == channel.id)
+    if (message.author.id == (this.discordClient.user.id))
       return;
-    sendMessage(message, <any>channel, this.config.redirect)
+    let newMes = await sendMessage(message, <any>message.channel, this.config.redirect);
+    // await newMes.edit("REMOVED")
+    await newMes.delete(0);
+    
 
   }
 }
@@ -111,7 +109,7 @@ async function sendMessage(
   message: Message,
   destChannel: TextChannel,
   redirect: EchobotRedirect
-): Promise<void> {
+): Promise<Message> {
   let options = redirect.options;
   let messageContents = message.content;
   // Copy rich embed if requested.
@@ -152,7 +150,7 @@ async function sendMessage(
 
   // Send message.
   // if (lastEcho != destinationMessage) {
-  (destChannel as TextChannel).send(destinationMessage, attachment);
+  return (destChannel as TextChannel).send(destinationMessage, attachment);
   // lastEcho = destinationMessage;
   // }
   return;

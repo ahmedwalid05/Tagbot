@@ -1,7 +1,6 @@
 {
     "token": "mfa.yourtoken-shouldgoherejklsdfhsoiehfseihfseifbisoehfoisefise",
     "redirect": {
-        "destinations": "129863219696239848",
         "tags": [
             "129863219696239848"
         ],

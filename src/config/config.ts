@@ -71,12 +71,7 @@ function checkConfiguration(config: EchobotConfiguration): EchobotConfiguration 
     return config;
 }
 function checkRedirectModel(redirect: EchobotRedirect) {
-  
-    // Check destination.
-    if (!redirect.destination ) {
-        throw new Error("Redirect has no destinations.");
-
-    } 
+ 
     if(!redirect.tags || redirect.tags.length==0){
         throw new Error("No People To tag")
     }
