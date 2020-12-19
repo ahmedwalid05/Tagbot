@@ -15,9 +15,9 @@ export function loadConfiguration(path): EchobotConfiguration {
 
 
     let config: EchobotConfiguration;
-    if (process.env.ECHOBOT_CONFIG_JSON) {
+    if (process.env.TAGBOT_CONFIG_JSON) {
         // Parse the env var contents as JSON.
-        config = JSON.parse(process.env.ECHOBOT_CONFIG_JSON);
+        config = JSON.parse(process.env.TAGBOT_CONFIG_JSON);
     } else if (fs.existsSync(path)) {
         // Parse the file as JSON.
         config = JSON.parse(fs.readFileSync(path).toString());
