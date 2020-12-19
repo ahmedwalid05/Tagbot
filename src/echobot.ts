@@ -142,7 +142,12 @@ async function sendMessage(
   // Add attachments if requested.
   let attachment: discord.Attachment | undefined;
   redirect.tags.forEach(tag => {
-    destinationMessage += `\n<@${tag}>\t`;
+    if(message.guild.roles.get(tag)){
+      destinationMessage += `\n<@&${tag}>\t`;
+    }else{
+      destinationMessage += `\n<@${tag}>\t`;
+    }
+    
   });
 
   // Send message.
