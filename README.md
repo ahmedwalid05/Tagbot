@@ -27,23 +27,6 @@ To setup and run this bot, you must first [install Node.js](https://nodejs.org/e
   * ```"includeSource": true```
 
 
-`
-### Finding your Token
-
-This Discord bot is called a "self-bot," meaning it runs as your personal Discord account rather than a separate bot account.
-
-In order for this to work, you need to provide your Discord token in the `config.json` file. To find this token, follow these steps:
-
-1. Open the Discord client on your computer.
-2. Push `Ctrl + Shift + I` to open the dev tools (may be different on non-windows operating systems).
-3. Go to the `Network` tab.
-4. Go to any channel in any guild.
-5. Click through the network requests that appear and search for the header `authorization`. 
-    - You can usually ignore image requests.
-6. Copy the value of the `authorization` header.
-    - It will look something like `mfa.aasdkf--SDsdkfjhsdf_ewrh-msufeusefsbeouhue_W-34FsedFwEsr_SDFsufserF4_slhSDF432f`
-
-The token will now be on your clipboard and can be pasted into the config. Make sure there is only one set of quotation marks.
 
 ### Finding Channel IDs
 
